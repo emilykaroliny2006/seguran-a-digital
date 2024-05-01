@@ -18,6 +18,37 @@ function diminuiTamanho() {
         //tamanhoSenh = tamanhoSenha-1;
         tamanhoSenha--;
     }
+    numeroSenha.textContent = tamanhoSenha;
+    geraSenha() {
+    }
+    function aumentaTamanho() {
+        if (tamanhoSenha < 20) {
+            // tamanhoSenha = tamanhoSenha+1;
+            tamanhoSenha++;
+        }
+        numeroSenha.textContent = tamanhoSenha;
+        geraSenha();
+    }
+
+    for (1 = 0; 1 < checkbox.length; 1++) {
+        checkbox[1].onclick = geraSenha;
+    }
+
+    gerarSenha();
+
+    function gerarSenha()  {
+        let alfabeto = '';
+        if (checkbox[0].checked) {
+            alfabeto = alfabeto + letraMinusculas;
+        }
+        if (checkbox[1].checked) {
+            alfabeto = alfabeto + letraMinusculas;
+        }
+        if (checkbox[2].checked) {
+            alfabeto = alfabeto + numeros;
+        }
+        if (checkbox)
+    }
     
 
 
