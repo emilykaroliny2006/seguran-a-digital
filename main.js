@@ -47,7 +47,33 @@ function diminuiTamanho() {
         if (checkbox[2].checked) {
             alfabeto = alfabeto + numeros;
         }
-        if (checkbox)
+        if (checkbox[3].checked){
+            alfabeto = alfabeto + simbolos;
+        }
+        let senha = '';
+        for (let i = 0; i < tamanhoSenha;i++){
+            let numeroAleatorio = Math.random()*alfabeto.length;
+            numeroAleatorio = Math.floor(numeroAleatorio);
+            senha = senha + alfabeto[numeroAleatorio];
+        }
+        campoSenha.value = senha;
+        classificaSenha(alfabeto.length);
+
+    }
+
+    function classificaSenha(tamanhoAlfabeto){
+        let entopia = tamanhoSenha * Math.log2(tamanhoAlfabeto);
+        console.log(entropia);
+        forcaSenha.classList.remove('fraca','media','forte');
+        if (entopia > 57){
+            forcaSenha.classList.add('forte');
+        }else if (entopia > 35 && entopia < 57){
+            forcaSenha.classList.add('media');
+        } else if (entopia<= 35){
+            forcaSenha.classList.add('fraca');
+        }
+        const valorEntropia = document.querySelector('.entropia');
+        valorEntropia.textContent = "Um computador pode levar até " + Math.floor(2**entropia/(100e6*60*60*24)) + "dias para descobrir essa senha. ";
     }
     
 
